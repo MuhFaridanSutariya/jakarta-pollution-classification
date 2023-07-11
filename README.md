@@ -80,4 +80,32 @@ Make a POST request to this endpoint to get pollution predictions.
 
 The request body should be a JSON object with the following fields:
 
+- DKI1: float
+- DKI2: float
+- DKI3: float
+- DKI4: float
+- DKI5: float
+- pm10: float
+- pm25: float
+- so2: float
+- co: float
+- o3: float
+- no2: float
+
+Example request body:
+`
+{
+    "DKI1": 0.1,
+    "DKI2": 0.2,
+    "DKI3": 0.3,
+    "DKI4": 0.4,
+    "DKI5": 0.5,
+    "pm10": 10.5,
+    "pm25": 5.2,
+    "so2": 0.8,
+    "co": 1.2,
+    "o3": 0.4,
+    "no2": 0.6
+}
+`
 
