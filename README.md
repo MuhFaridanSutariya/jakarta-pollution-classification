@@ -69,4 +69,14 @@ This command will install all the required packages specified in the `requiremen
 
 This API provides a prediction endpoint for estimating pollution levels based on input features. It utilizes a trained machine learning model to make predictions.
 
-The API server will start running locally at `http://localhost:8000`.
+The API server will start running locally at `http://localhost:8000`
+
+### 7. API Endpoint:
+
+`POST /predict`
+Make a POST request to this endpoint to get pollution predictions.
+
+<b>Request Body</b>
+The request body should be a JSON object with the following fields:
+
+
