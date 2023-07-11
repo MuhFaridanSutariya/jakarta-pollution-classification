@@ -80,11 +80,11 @@ Make a POST request to this endpoint to get pollution predictions.
 
 The request body should be a JSON object with the following fields:
 
-- DKI1: float (0-1)
-- DKI2: float (0-1)
-- DKI3: float (0-1)
-- DKI4: float (0-1)
-- DKI5: float (0-1)
+- DKI1: float (0 - 1)
+- DKI2: float (0 - 1)
+- DKI3: float (0 - 1)
+- DKI4: float (0 - 1)
+- DKI5: float (0 - 1)
 - pm10: float (-1 - 800)
 - pm25: float (-1 - 400)
 - so2: float (-1 - 500)
