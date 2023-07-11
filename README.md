@@ -80,11 +80,11 @@ Make a POST request to this endpoint to get pollution predictions.
 
 The request body should be a JSON object with the following fields:
 
-- DKI1: float
-- DKI2: float
-- DKI3: float
-- DKI4: float
-- DKI5: float
+- DKI1: float (binary)
+- DKI2: float (binary)
+- DKI3: float (binary)
+- DKI4: float (binary)
+- DKI5: float (binary)
 - pm10: float
 - pm25: float
 - so2: float
@@ -96,10 +96,10 @@ Example request body:
 `
 {
     "DKI1": 0.1,
-    "DKI2": 0.2,
-    "DKI3": 0.3,
-    "DKI4": 0.4,
-    "DKI5": 0.5,
+    "DKI2": 0.0,
+    "DKI3": 0.0,
+    "DKI4": 0.0,
+    "DKI5": 0.0,
     "pm10": 10.5,
     "pm25": 5.2,
     "so2": 0.8,
@@ -108,4 +108,23 @@ Example request body:
     "no2": 0.6
 }
 `
+
+<b>Response</b>
+
+The API will respond with a JSON object containing the prediction result:
+
+`
+{
+    "status": 200,
+    "input": [0.1, 0.0, 0.0, 0.0, 0.0, 10.5, 5.2, 0.8, 1.2, 0.4, 0.6],
+    "message": "BAIK"
+}
+`
+
+The `status` field indicates the status of the prediction. A value of 200 indicates a successful prediction. The `input` field shows the input values provided in the request. The `message` field contains the predicted pollution level.
+
+In case of an error or failure, the API will respond with a status code of 204 and an error message in the `message` field.
+
+
+
 
