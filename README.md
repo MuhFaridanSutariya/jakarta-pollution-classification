@@ -77,6 +77,7 @@ The API server will start running locally at `http://localhost:8000`
 Make a POST request to this endpoint to get pollution predictions.
 
 <b>Request Body</b>
+
 The request body should be a JSON object with the following fields:
 
 
