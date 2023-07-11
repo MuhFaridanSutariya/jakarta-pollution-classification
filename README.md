@@ -66,3 +66,7 @@ This command will install all the required packages specified in the `requiremen
 ### 6. Run FAST API:
 
 ``uvicorn <replace-with-namafile>:app --reload``
+
+This API provides a prediction endpoint for estimating pollution levels based on input features. It utilizes a trained machine learning model to make predictions.
+
+The API server will start running locally at `http://localhost:8000`.
