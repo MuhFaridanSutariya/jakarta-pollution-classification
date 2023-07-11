@@ -89,7 +89,7 @@ The request body should be a JSON object with the following fields:
 - pm25: float (-1 - 400)
 - so2: float (-1 - 500)
 - co: float (-1 - 100)
-- o3: float
+- o3: float (-1 - 160)
 - no2: float (-1 - 100)
 
 Example request body:
