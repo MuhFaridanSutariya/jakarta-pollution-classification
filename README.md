@@ -42,7 +42,7 @@ After creating the virtual environment, you need to activate it before installin
 **On Windows:**
 In Command Prompt, enter the following command:
 ```bash
-virtualenv_name\Scripts\activate.bat
+virtualenv_name\Scripts\activate
 ```
 Replace `virtualenv_name` with the name you provided in the previous step.
 
