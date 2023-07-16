@@ -63,7 +63,7 @@ pip install -r requirements.txt
 ```
 This command will install all the required packages specified in the `requirements.txt` file
 
-### 6. Run Streamlit AND FAST API:
+### 6. Run STREAMLIT AND FAST API:
 
 Please run this command at the same time
 
