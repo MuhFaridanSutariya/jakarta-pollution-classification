@@ -9,6 +9,10 @@ model:
 encoder:
   encoder_directory: models/ohe_stasiun.pkl
 
+# Image
+assets:
+  img_directory: src/streamlit/assets/jakarta-pollution.jpg
+
 # Live Server
 server:
   url: http://127.0.0.1:8000/predict

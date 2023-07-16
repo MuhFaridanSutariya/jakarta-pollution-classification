@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+from fastapi import Request
+
 
 import os
 import joblib
@@ -39,19 +41,32 @@ def load_encoder():
         return response
     
 @app.post("/predict")
-async def predict(stasiun: str, pm10: float, pm25: float, so2: float, co: float, o3: float, no2: float):
+async def predict(data: Request):
+
+    # load request
+    data = await data.json()
+
+    stasiun = data['stasiun']
+    pm10 = float(data['pm10'])
+    pm25 = float(data['pm25'])
+    so2 = float(data['so2'])
+    co = float(data['co'])
+    o3 = float(data['o3'])
+    no2 = float(data['no2'])
 
     model = load_model()
     encoder = load_encoder()
 
     label = ['BAIK', 'TIDAK SEHAT']
 
-    encoded_stasiun = encoder.transform(np.array(stasiun).reshape(-1, 1))
-    numerical_features = np.array([[pm10, pm25, so2, co, o3, no2]])
-
-    input_data = np.concatenate((encoded_stasiun, numerical_features), axis=1)
-
     try:
+        # Perform encoding on the categorical feature
+        encoded_stasiun = encoder.transform(np.array(stasiun).reshape(-1, 1))
+
+        # Create the input array
+        numerical_features = np.array([[pm10, pm25, so2, co, o3, no2]])
+        input_data = np.concatenate((encoded_stasiun, numerical_features), axis=1)
+
         prediction = model.predict(input_data)
         response = {
             "status": 200,
@@ -64,4 +79,3 @@ async def predict(stasiun: str, pm10: float, pm25: float, so2: float, co: float,
             "message": str(e)
         }
     return response
-
