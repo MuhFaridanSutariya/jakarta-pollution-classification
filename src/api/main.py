@@ -1,12 +1,24 @@
 from fastapi import FastAPI
+
+import os
 import joblib
 import numpy as np
+import yaml
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+config_path = os.path.join(current_dir, '../../config/config.yaml')
+
+# Load the config from the specified file path
+with open(config_path, 'r') as config_file:
+    config = yaml.safe_load(config_file)
+
 
 app = FastAPI()
 
 def load_model():
     try:
-        model = joblib.load('/home/muhfaridansutariya/asistensi_mlprocess/MLProcess/Asistensi/jakarta-pollution-classification/models/model2.pkl')
+        model = joblib.load('{}'.format(config['model']['model_directory']))
         return model
     except Exception as e:
         response = {
@@ -17,7 +29,7 @@ def load_model():
 
 def load_encoder():
     try:
-        ohe_stasiun = joblib.load("/home/muhfaridansutariya/asistensi_mlprocess/MLProcess/Asistensi/jakarta-pollution-classification/models/ohe_stasiun.pkl")
+        ohe_stasiun = joblib.load('{}'.format(config['encoder']['encoder_directory']))
         return ohe_stasiun
     except Exception as e:
         response = {
