@@ -71,11 +71,11 @@ Please run this command at the same time
 
 How to run FAST API:
 
-``uvicorn <replace-with-namafile>:app --reload``
+``uvicorn <replace-with-namefile>:app --reload``
 
 How to run Streamlit:
 
-``streamlit run <replace-with-namafile>``
+``streamlit run <replace-with-namefile>``
 
 Open your port as mentioned in terminal prompt.
 
