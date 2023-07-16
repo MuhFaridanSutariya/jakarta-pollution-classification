@@ -80,11 +80,7 @@ Make a POST request to this endpoint to get pollution predictions.
 
 The request body should be a JSON object with the following fields:
 
-- DKI1: float (0 - 1)
-- DKI2: float (0 - 1)
-- DKI3: float (0 - 1)
-- DKI4: float (0 - 1)
-- DKI5: float (0 - 1)
+- stasiun: str (DKI1 (Bunderan HI), DKI2 (Kelapa Gading), DKI3 (Jagakarsa), DKI4 (Lubang Buaya), DKI5 (Kebon Jeruk) Jakarta Barat)
 - pm10: float (-1 - 800)
 - pm25: float (-1 - 400)
 - so2: float (-1 - 500)
@@ -95,11 +91,7 @@ The request body should be a JSON object with the following fields:
 Example request body:
 `
 {
-    "DKI1": 0.1,
-    "DKI2": 0.0,
-    "DKI3": 0.0,
-    "DKI4": 0.0,
-    "DKI5": 0.0,
+    "stasiun": DKI1 (Bunderan HI),
     "pm10": 10.5,
     "pm25": 5.2,
     "so2": 0.8,
@@ -116,8 +108,8 @@ The API will respond with a JSON object containing the prediction result:
 `
 {
     "status": 200,
-    "input": [0.1, 0.0, 0.0, 0.0, 0.0, 10.5, 5.2, 0.8, 1.2, 0.4, 0.6],
-    "message": "BAIK"
+    "input": [1.0, 0.0, 0.0, 0.0, 0.0, 10.5, 5.2, 0.8, 1.2, 0.4, 0.6],
+    "message": "TIDAK SEHAT"
 }
 `
 
