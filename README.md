@@ -63,13 +63,19 @@ pip install -r requirements.txt
 ```
 This command will install all the required packages specified in the `requirements.txt` file
 
-### 6. Run FAST API:
+### 6. Run Streamlit AND FAST API:
+
+Please run this command at the same time
+
+How to run FAST API:
 
 ``uvicorn <replace-with-namafile>:app --reload``
 
-This API provides a prediction endpoint for estimating pollution levels based on input features. It utilizes a trained machine learning model to make predictions.
+How to run Streamlit:
 
-The API server will start running locally at `http://localhost:8000`
+``streamlit run <replace-with-namafile>``
+
+Open your port as mentioned in terminal prompt.
 
 ### 7. API Endpoint:
 
