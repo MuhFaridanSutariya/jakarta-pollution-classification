@@ -1,3 +1,5 @@
+![image](https://github.com/MuhFaridanSutariya/jakarta-pollution-classification/assets/88027268/9ec31df5-5efb-4436-b08b-7972b67dc5af)
+
 ## How to run
 
 ### 1. Clone this repository
