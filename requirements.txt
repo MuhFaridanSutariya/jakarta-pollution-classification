@@ -8,3 +8,4 @@ requests
 streamlit
 pyyaml
 xgboost
+scikit-learn
